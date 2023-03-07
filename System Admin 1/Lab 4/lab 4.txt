@@ -1,0 +1,31 @@
+1- touch logic.sh
+   nano logic.sh
+   { #!/bin/bash
+	while true
+	do
+	ls /var/log >> /tmp/list.log
+	sleep 5
+	done }
+   cd/tmp
+   touch list.log
+   cd ~ 
+   bash logic.sh
+   cd/tmp
+   nano list.log
+
+2- sudo cp logic.sh /usr/local/bin
+   cd /usr/local/bin
+   sudo chmod +x logic.sh
+   bash logic.sh
+
+3-touch serv.service
+  nano serv.service
+  sudo cp serv.service /etc/systemd/system/
+  cd /etc/systemd/system/
+  sudo systemct1 daemon-reload
+  sudo service serv start
+  sudo service serv status
+
+4-sudo apt-get install cron
+  crontab -e
+  1

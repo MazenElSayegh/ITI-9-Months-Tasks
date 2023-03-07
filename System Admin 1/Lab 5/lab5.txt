@@ -1,0 +1,23 @@
+1-dd if=/dev/zero of=/tmp/file1.img bs=512 count=40000
+
+2-losetup -f
+  sudo losetup -P /dev/loop6 /tmp/file1.img
+
+3-sudo fdisk /dev/loop6
+  n
+  w
+
+4-sudo mkfs.ext4 /tmp/file1.img
+  y
+
+5-sudo mount /dev/loop6 /mnt
+
+
+6-cd /mnt
+  sudo touch file2.txt
+
+7-sudo apt search gparted
+  sudo apt install gparted
+
+8- sudo gparted /dev/loop6
+

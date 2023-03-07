@@ -1,0 +1,11 @@
+1-sudo adduser itiuser1
+2-sudo adduser itiuser2
+3-sudo addgroup os_team
+4-mkdir os_team_workspace
+5-sudo login
+6-itiuser1
+7-mkdir mydir1
+8-ls -lg
+9-tail -f /var/log/syslog
+10-ps -aux
+11-sudo kill -9 4997
