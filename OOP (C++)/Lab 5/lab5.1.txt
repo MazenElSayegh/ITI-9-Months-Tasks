@@ -1,0 +1,271 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class student
+{  int id;
+   char* name;
+   static int count;
+   static char* school;
+  public:
+   void setId(int d);
+   int getId(void);
+   void setName(char n[]);
+   char* getName(void);
+   student()
+   { id=0;
+     name= new char[4];
+     strcpy(name,"ITI");
+     count++;
+   }
+   student(int i, char n[])
+   { int x=0;
+     id=i;
+     x=strlen(n);
+     name= new char[x+1];
+     strcpy(name,n);
+     count++;
+   };
+   student operator+(student s);
+   student operator+(int m);
+   student operator+(char ar[]);
+   student operator=(student s);
+   student operator++();
+   student operator++(int m);
+   int operator==(student s);
+   operator int();
+   operator char*();
+   friend student operator+(int x, student s);
+   friend student operator+(char ar[], student s);
+   student( student &s)
+   { id=s.id;
+     int x=strlen(s.name);
+     name= new char[x+1];
+     strcpy(name,s.name);
+     count++;
+   };
+   ~ student()
+   { delete name;
+     count--; };
+   static int GetCount() { return count; }
+   static void SetSchool(char n[])
+   { int x=0;
+     delete(school);
+     x=strlen(n);
+     school= new char[x+1];
+     strcpy(school,n);  };
+   static char* GetSchool() { return school; }
+
+};
+
+int student::count=0;
+char* student::school="ITI";
+
+
+student fill(void);
+void print(student st);
+
+int main()
+{
+  clrscr();
+  student s1,s2(1,"mazen");
+  int size;
+  cout<<"How many students?"<<endl;
+  cin>>size;
+  student* s=new student[size];
+  for(int i=0;i<size;i++)
+  { s[i]=fill(); }
+  clrscr();
+  for(i=0;i<size;i++)
+  { print(s[i]); }
+  cout<<endl<<"Count= "<<student::GetCount();
+  cout<<endl<<"What is the name of the school?"<<endl;
+  char sname[20];
+  cin>>sname;
+  student::SetSchool(sname);
+  for(i=0;i<size;i++)
+  { print(s[i]); }
+
+
+
+
+
+
+
+
+ /* student s3;
+ int n;
+ char* ptr;
+
+ clrscr();
+ student s1(2,"Mazen"), s2(3,"Mohamed");
+ s3=s1+s2;
+ print(s1+s3); //+ operator
+ print(s1+3); //+ int operator
+ print(s2+"Kamal"); //+ char operator
+ n=(int)s1; //int casting
+ cout<<endl<<"ID="<<n;
+ s1=s2;
+ print(s1); //= operator
+ s2=s3++;
+ print(s2); //s++ operator
+ s3=++s2;
+ print(s2); //++s operator
+ ptr=(char*)s3;
+ cout<<endl<<ptr;//char casting
+ print(s1);
+ print(2+s1);
+ print("Mohamed"+s1);
+ s2=s3;
+ if(s2==s3)
+ { cout<<endl<<"They are equal"; } */
+
+
+
+
+
+ getch();
+ return 0;
+
+
+
+
+}
+
+student fill(void)
+{
+ student st;
+ int id;
+ char name[20];
+
+ cout<<endl<<"Enter Id: ";
+ cin>>id;
+ st.setId(id);
+
+ cout<<endl<<"Enter Name: ";
+ cin>>name;
+ st.setName(name);
+
+ return st;
+}
+
+void print(student st)
+{
+ cout<<endl<<"ID: "<<st.getId();
+ cout<<endl<<"Name: "<<st.getName();
+ cout<<endl<<"School Name: "<<student::GetSchool();
+}
+
+
+void student::setId(int d)
+{ id=d; }
+
+
+int student::getId(void)
+{  return id;  }
+
+
+void student::setName(char n[])
+{
+   int x=0;
+   delete(name);
+   x=strlen(n);
+   name= new char[x+1];
+   strcpy(name,n);
+
+  }
+
+
+char* student::getName(void)
+{  return name;  }
+
+
+student student::operator+(student s)
+{
+  student temp;
+  int a,n;
+  temp.id=id+s.id;
+  a=strlen(s.name);
+  n=strlen(name);
+  temp.name= new char[a+n+2];
+  strcpy(temp.name,name);
+  strcat(temp.name," ");
+  strcat(temp.name,s.name);
+  return temp;
+}
+
+student student::operator+(int m)
+{
+ student temp;
+ temp.id=id+m;
+ strcpy(temp.name,name);
+ return temp;
+}
+
+student student::operator+(char ar[])
+{
+ student temp;
+ int n,a;
+ temp.id=id;
+ a=strlen(ar);
+ n=strlen(name);
+ temp.name= new char[a+n+2];
+ strcpy(temp.name,name);
+ strcat(temp.name," ");
+ strcat(temp.name,ar);
+ return temp;
+}
+
+student student::operator=(student s)
+{
+ int a;
+ id=s.id;
+ a=strlen(s.name);
+ delete(name);
+ name=new char[a+1];
+ strcpy(name,s.name);
+ return s;
+}
+
+student student::operator++()
+{
+ id++;
+ return *this;
+}
+
+student student::operator++(int m)
+{
+ student old;
+ old=*this;
+ id++;
+ cout<<m<<endl;
+ return old;
+
+}
+
+int student::operator==(student s)
+{ return(id==s.id&&!strcmp(name,s.name)); }
+
+student::operator int()
+{ return id; }
+
+student::operator char*()
+{ return name; }
+
+student operator+(int x, student s)
+{
+
+  return (s+x);  /*student temp;
+		  temp.id=x+s.id;
+		  strcpy(temp.name,name);*/
+
+}
+
+student operator+(char ar[], student s)
+{
+  return(s+ar);
+
+}
+
+

@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class student
+{  int id;
+   char* name;
+  public:
+   void setId(int d);
+   int getId(void);
+   void setName(char n[]);
+   char* getName(void);
+   student()
+   { id=0;
+     name= new char[4];
+     strcpy(name,"ITI");
+   }
+   student(int i, char n[])
+   { int x=0;
+     id=i;	
+     x=strlen(n);
+     name= new char[x+1];
+     strcpy(name,n);
+   };
+   student( student &s)
+   { id=s.id;
+     int x=strlen(s.name);
+     name= new char[x+1];
+     strcpy(name,s.name);
+   };
+   ~ student()
+   { delete name; };
+
+};
+
+student fill(void);
+void print(student st);
+
+int main()
+{
+ student s3;
+
+ clrscr();
+ student s1 (5,"mazen"), s2;
+ s3=fill();
+ print(s1);
+ cout<<"\n";
+ print(s2);
+ cout<<"\n";
+ print(s3);
+
+
+ getch();
+ return 0;
+
+
+
+
+}
+
+student fill(void)
+{
+ student st;
+ int id;
+ char name[20];
+
+ cout<<endl<<"Enter Id: ";
+ cin>>id;
+ st.setId(id);
+
+ cout<<endl<<"Enter Name: ";
+ cin>>name;
+ st.setName(name);
+
+
+ return st;
+}
+
+void print(student st)
+{
+
+ cout<<endl<<"ID: "<<st.getId();
+ cout<<endl<<"Name: "<<st.getName();
+
+
+}
+
+
+void student::setId(int d)
+{ id=d; }
+
+
+int student::getId(void)
+{  return id;  }
+
+
+void student::setName(char n[])
+{
+   int x=0;
+   delete(name);
+   x=strlen(n);
+   name= new char[x+1];
+   strcpy(name,n);
+
+  }
+
+
+char* student::getName(void)
+{  return name;  }
+
+
+
+

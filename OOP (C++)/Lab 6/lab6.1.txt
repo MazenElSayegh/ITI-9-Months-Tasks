@@ -1,0 +1,99 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class person
+{
+  protected:
+   int id;
+   char name[10];
+  public:
+   /*void setId(int d);
+   int getId(void);
+   void setName(char n[]);
+   char* getName(void);*/
+   person()
+   { id=0;
+     strcpy(name,"ITI");
+   }
+   person(int i, char n[])
+   { id=i;
+     strcpy(name,n);
+   };
+};
+
+
+class employee: public person
+{ public:
+    int salary;
+  public:
+   /*void setId(int d);
+   int getId(void);
+   void setName(char n[]);
+   char* getName(void);*/
+   employee()
+   { salary=0; }
+   employee(int i, char n[], int s):person(i,n)
+   { salary=s; };
+};
+
+
+
+class customer: public person
+{ protected:
+   char phone[20];
+  public:
+   void setPhone(char p[]);
+   char* getPhone(void);
+   customer()
+   { strcpy(phone,"0000");  };
+   customer(int i, char n[], char p[]):person(i,n)
+   { strcpy(phone,p);  };
+};
+
+
+
+int main()
+{
+  clrscr();
+  char p[20];
+  employee e1(12,"Mazen",7000);
+  customer c1(13,"Ahmed","01012386667");
+  cout<< e1.salary<<endl;
+  cout<<"enter phone"<<endl;
+  cin>>p;
+  c1.setPhone(p);
+  cout<<c1.getPhone();
+
+
+  
+  
+ getch();
+ return 0;
+
+
+
+
+}
+
+
+
+/*void student::setId(int d)
+{ id=d; }
+
+
+int student::getId(void)
+{  return id;  }*/
+
+
+void customer::setPhone(char p[])
+{
+
+   strcpy(phone,p);
+
+  }
+
+
+char* customer::getPhone(void)
+{  return phone;  }

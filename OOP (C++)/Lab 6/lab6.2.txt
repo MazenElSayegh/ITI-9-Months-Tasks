@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class Base
+{  protected:
+     int z;
+   public:
+     Base() { z=0; }
+     Base(int m) {z=m; }
+     void setZ(int n) { z=n; }
+     int getZ() {return z; }
+};
+
+class Der1: virtual public Base
+{   protected:
+      int x;
+    public:
+      Der1() { x=0; }
+      Der1(int m):Base(m)
+      { x=m; }
+      void setX(int m)
+      { x=m; }
+      int getX()
+      { return x; }
+};
+
+class Der2: virtual public Base
+{   protected:
+      int y;
+    public:
+      Der2() { y=0; }
+      Der2(int m):Base (m)
+      { y=m; }
+      void setY(int m)
+      { y=m; }
+      int getY()
+      { return y; }
+};
+
+class Der3: public Der1, public Der2
+{   public:
+      Der3();
+      Der3(int l, int m):Der1(m), Der2(l) {}
+      int product()
+      { return(x*y); }
+      int sum()
+      { return(x+y); }
+};
+
+
+int main()
+{
+   clrscr();
+   Der3 drv(3,4);
+   cout<<"Product:"<<drv.product()<<endl;
+   cout<<"Sum:"<<drv.sum()<<endl;
+   cout<<"Z is equal: "<<drv.getZ();
+
+
+
+   getch();
+   return 0;
+}

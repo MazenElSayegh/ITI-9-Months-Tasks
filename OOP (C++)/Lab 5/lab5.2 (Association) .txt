@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class point
+{ int x,y;
+  public:
+  point()
+  { x=y=0; }
+  point(int m)
+  { x=y=m; }
+  point(int m,int n)
+  { x=m;
+    y=n; }
+  void SetX(int m)
+  { x=m; }
+  void SetY(int n)
+  { y=n; }
+  int GetX()
+  { return x; }
+  int GetY()
+  { return y; }
+};
+
+class rectangleA
+{ point *p1,*p2;
+  int length, width;
+  public:
+  rectangleA()
+  { p1=p2=NULL;
+    length=width=0; }
+  rectangleA (point *pa, point *pb)
+  { p1=pa;
+    p2=pb;
+    if(p1!=NULL&&p2!=NULL)
+    { length=abs(p2->GetX()-p1->GetX());
+      width=abs(p2->GetY()-p1->GetY()); }
+    else
+    { length=width=0; } }
+  void SetP1(point *p)
+  { p1=p;
+    if(p1!=NULL&&p2!=NULL)
+    { length=abs(p2->GetX()-p1->GetX());
+      width=abs(p2->GetY()-p1->GetY()); }
+    else
+    { length=width=0; } }
+   void SetP2(point *p)
+  { p2=p;
+    if(p1!=NULL&&p2!=NULL)
+    { length=abs(p2->GetX()-p1->GetX());
+      width=abs(p2->GetY()-p1->GetY()); }
+    else
+    { length=width=0; } }
+   int Area()
+   { return(length*width); }
+}
+
+class rectangleC
+{  point p1,p2;
+   int length,width;
+   public:
+   rectangleC (int x1,int y1,int x2, int y2):p1(x1,y1),p2(x2,y2)
+   {  p1.SetX(x1);
+      p1.SetY(y1);
+      p2.SetX(x2);
+      p2.SetY(y2);
+      length=abs(x2-x1);
+      width=abs(y2-y1);
+
+
+

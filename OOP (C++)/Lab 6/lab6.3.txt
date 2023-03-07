@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class shape
+{  protected:
+     int d1,d2;
+   public:
+     shape()
+     { d1=d2=0; }
+     shape(int m)
+     { d1=d2=m; }
+     shape(int m,int n)
+     { d1=m;
+       d2=n; }
+     void setD1(int m)
+     { d1=m; }
+     void setD2(int n)
+     { d2=n; }
+     int getD1()
+     { return d1; }
+     int getD2()
+     { return d2; }
+     virtual float Area()=0;
+};
+
+class circle: public shape
+{  public:
+    circle() {}
+    circle(int r):shape(r) {}
+    float Area()
+    { return (3.14*d1*d2); }
+};
+
+class rect: public shape
+{  public:
+     rect() {}
+     rect(int l, int m):shape (l,m) {}
+     float Area()
+     { return (1.0*d1*d2); }
+};
+
+
+class tri: public shape
+{   public:
+     tri() {}
+     tri(int b, int h):shape(b,h) {}
+     float Area()
+     { return(0.5*d1*d2); }
+};
+
+class sq: public rect
+{  public:
+    sq() {}
+    sq(int s):rect(s,s) {}
+};
+
+class geo
+{  shape* ptr[4];
+   public:
+     geo(shape* p1, shape* p2, shape* p3, shape* p4)
+     { ptr[0]=p1;
+       ptr[1]=p2;
+       ptr[2]=p3;
+       ptr[3]=p4; }
+     float TotalArea();
+};
+
+
+int main()
+{
+   clrscr();
+   circle c(7);
+   rect r(20,5);
+   tri t(10,20);
+   sq s(6);
+   geo g(&c,&c,&c,&c);
+   cout<<g.TotalArea();
+
+
+
+   getche();
+   return 0;
+}
+
+float geo::TotalArea()
+     {  float total=0;
+	for(int i=0;i<4;i++)
+	{ total+=ptr[i]->Area(); }
+	return total; }

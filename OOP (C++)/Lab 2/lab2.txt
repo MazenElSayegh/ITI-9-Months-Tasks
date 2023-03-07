@@ -1,0 +1,83 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class student
+{  int id;
+   char name[20];
+  public:
+   void setId(int d);
+   int getId(void);
+   void setName(char n[]);
+   char *getName(void);
+
+};
+
+student fill(void);
+void print(student st);
+
+int main()
+{
+ student s1,s2;
+
+ clrscr();
+ s1=fill();
+ s2=fill();
+ print(s1);
+ print(s2);
+
+ getch();
+ return 0;
+
+
+
+
+}
+
+student fill(void)
+{
+ student st;
+ int id;
+ char name[20];
+
+ cout<<endl<<"Enter Id: ";
+ cin>>id;
+ st.setId(id);
+
+ cout<<endl<<"Enter Name: ";
+ cin>>name;
+ st.setName(name);
+
+
+ return st;
+}
+
+void print(student st)
+{
+
+ cout<<endl<<"ID: "<<st.getId();
+ cout<<endl<<"Name: "<<st.getName();
+
+
+}
+
+
+void student::setId(int d)
+{ id=d; }
+
+
+int student::getId(void)
+{  return id;  }
+
+
+void student::setName(char n[])
+{  strcpy(name,n);  }
+
+
+char* student::getName(void)
+{  return name;  }
+
+
+
+

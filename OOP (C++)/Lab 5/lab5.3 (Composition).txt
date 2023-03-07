@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+
+class point
+{ int x,y;
+  public:
+  point()
+  { x=y=0; }
+  point(int m)
+  { x=y=m; }
+  point(int m,int n)
+  { x=m;
+    y=n; }
+  void SetX(int m)
+  { x=m; }
+  void SetY(int n)
+  { y=n; }
+  int GetX()
+  { return x; }
+  int GetY()
+  { return y; }
+};
+
+

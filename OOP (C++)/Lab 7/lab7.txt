@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream.h>
+#include <string.h>
+#include <fstream.h>
+
+class point
+{ int x,y,z;
+  public:
+  point()
+  { x=y=z=0; }
+  point(int a,int b,int c)
+  { x=a;
+    y=b;
+    z=c; }
+  void setX(int l)
+  { x=l; }
+  void setY(int m)
+  { y=m; }
+  void setZ(int n)
+  { z=n; }
+  int getX() { return x; }
+  int getY() { return y; }
+  int getZ() { return z; }
+  friend ostream& operator << (ostream& out, point pt);
+  friend istream& operator >> (istream& in, point& pt);
+};
+
+int main()
+{ clrscr();
+  point p1(1,2,3),p2(4,5,6),p3(7,8,9),p4 ;
+  fstream obj;
+  ofstream file;
+
+  obj.open("trial.txt",ios::out);
+  obj<<p1;
+  obj.close();
+  cout<<"Writing successful"<<endl;
+
+
+  obj.open("trial.txt",ios::in);
+  obj>>p2;
+  cout<<"Reading successful"<<endl;
+  cout<<"P2 values: "<<endl;
+  cout<<p2<<endl;
+  obj.close();
+
+  obj.open("binary.dat",ios::out | ios::binary);
+  obj.write((char*)&p3,sizeof(point));
+  obj.close();
+
+
+  obj.open("binary.dat",ios::in | ios::binary);
+  obj.read((char*)&p4,sizeof(point));
+  obj.close();
+  cout<<endl<<endl<<"P4 values: "<<p4;
+
+
+  getch();
+  return 0;
+}
+
+ostream& operator << (ostream& out, point pt)
+{  out<<pt.x<<endl;
+   out<<pt.y<<endl;
+   out<<pt.z<<endl;
+   return out;
+}
+
+istream& operator >> (istream& in , point& pt)
+{  cout<<"Enter X: ";
+   in>>pt.x;
+   cout<<"Enter Y: ";
+   in>>pt.y;
+   cout<<"Enter Z: ";
+   in>>pt.z;
+   return in;
+}
