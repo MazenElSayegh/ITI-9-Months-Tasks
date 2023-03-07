@@ -1,0 +1,67 @@
+
+#ok{
+    width: 20%;
+    height: 10%;
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#acc{
+    color: "lightgreen";
+}
+#us{
+    width: 80%;
+    height: 20%;
+    background-color: lightgrey;
+    border: none;
+    padding: 5px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    justify-content: center;
+    background-color: lightgreen;
+    align-items: center;
+} 
+#dv{
+    width: 28%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+} 
+
+#frm{
+    width:80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#btn{
+    width: 82%;
+    background-color: green;
+    height: 20%;
+    border: none;
+    color: white;
+}
+#pass {
+    width: 80%;
+    height: 20%;
+    background-color: lightgrey;
+    border: none;
+    padding: 5px;
+}
+#usErr,#passErr{
+    color: red;
+    position: relative;
+    top: 5px;
+}
+

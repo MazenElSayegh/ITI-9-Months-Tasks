@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock and Alarm</title>
+</head>
+<body>
+    <div id="top">
+        <div id="main">
+            <div id="week">
+                <p class="day">SUN</p>
+                <p class="day">MON</p>
+                <p class="day">TUES</p>
+                <p class="day">WED</p>
+                <p class="day">THU</p>
+                <p class="day">FRI</p>
+                <p class="day">SAT</p>
+            </div>
+            <div id="clock">
+                <button id="alarmBtn"><img src="pics/alarm.png" alt=""></button>
+                <span id="time"></span>
+                <span id="apm"></span>
+            </div>
+        </div>
+        <h1>Digital Clock</h1>
+    </div>
+    <div id="popUp">
+        <button id="close">X</button>
+        <div id="setAft">Set Alarm After</div>
+        <div id="container">
+            <div>
+                <label>HOURS</label><br/>
+                <input type="text" placeholder="0" id="hrs" />
+            </div>
+            <div>
+                <label>MINUTES</label><br/>
+                <input type="text" placeholder="0" id="min" />
+            </div>
+            <div>
+                <label>SECONDS</label><br/>
+                <input type="text" placeholder="0" id="sec" />
+            </div>
+        </div>
+        <div id="btns">
+          <button id="set">Set</button>
+          <button id="clear">Clear</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+  width: 99%;
+  height: 100%;
+}
+#container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  height: 100%;
+  align-items: center;
+}
+#bh {
+  width: 400px;
+}
+#bugs {
+  width: 150px;
+}

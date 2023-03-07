@@ -1,0 +1,72 @@
+div{
+    background-image: linear-gradient(to right, lightblue, rgb(101, 101, 207));
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    padding: 20px;
+    justify-content: center;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+#center{
+  order: 3;
+  width: 40%;
+  height: 60%;
+  z-index: 1;
+
+}
+#right{
+    order: 4;
+    opacity: 0.7;
+    width: 20%;
+    height: 50%;
+    z-index: 0;
+    /* position: relative;
+    right: 100px; */
+}
+/* #three{
+    visibility: hidden;
+}
+#four{
+    visibility: hidden;
+}
+#five{
+    visibility: hidden;
+} */
+#left{
+    order: 2;
+    opacity: 0.7;
+    width: 20%;
+    height: 50%;
+    z-index: 0;
+    /* position: relative;
+    left: 100px; */
+}
+img{
+    width: 100%;
+    height: 100%;   
+}
+#nxt ,#prv{
+    width: 50px;
+    height: 40px;
+    opacity: 0.6;
+    border: none;
+    background-color: transparent;
+}
+#nxt{
+    order: 5;
+    position: relative;
+    right: 50px;
+}
+#prv{
+    order: 1;
+    position: relative;
+    left: 50px;
+}
