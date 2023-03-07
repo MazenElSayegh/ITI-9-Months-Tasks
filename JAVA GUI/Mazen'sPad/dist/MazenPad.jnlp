@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="MazenPad.jnlp">
+  <information>
+    <title>MazenPad</title>
+    <vendor>Eng.Mohamed</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="MazenPad.jar" size="6637" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="mazenpad.MazenPad"  name="MazenPad" />
+  <update check="always"/>
+</jnlp>
