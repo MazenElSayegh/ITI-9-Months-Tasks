@@ -1,0 +1,194 @@
+#include <stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<alloc.h>
+
+struct student
+{ int id;
+  char name[20];
+  int grade[3]; };
+
+struct student ar[10];
+void MergeSort(int LB, int UB);
+void Merge(int low,int mid, int high);
+void BubbleSort(struct student ar[],int s);
+int BinarySearch(struct student ar[10],int LB,int UB,int data);
+int size;
+
+struct student fillSt(void);
+void printSt(struct student s);
+void printAll(void);
+
+
+int main()
+{ int z=0;
+  struct student s;
+  int x=0;
+  int loc=0;
+  int j=0;
+  
+  clrscr();
+
+
+
+ while(z!=6) {
+  printf("1-Bubble sort\n2-Merge sort\n3-Binary Search by ID\n4-Fill student\n5-Print all\n6-Exit\n");
+  scanf("%d",&z);
+  switch (z)
+  {
+  case 1: //Bubble
+   BubbleSort(ar, size);
+   printf("Bubble sort is successful");
+
+   getch();
+   clrscr();
+   break;
+  case 2:  ///Merge
+   MergeSort(0,size-1);
+   printf("Merge succesful");
+   getch();
+   clrscr();
+   break;
+  case 3:  //Search
+   printf("Enter the ID: ");
+   scanf("%d",&x);
+   loc= BinarySearch(ar,0,size,x);
+   printf("The Data of the student with ID: %d\n",x);
+   printSt(ar[loc]);
+   getch();
+   clrscr();
+   break;
+  case 4:   //Fill student
+   s=fillSt();
+   ar[size-1]=s;
+   printf("Fill is successul\n");
+   printSt(s);
+   j++;
+   getch();
+   clrscr();
+   break;
+  case 5:  //Print
+   printAll();
+   getch();
+   clrscr();
+   break;
+  case 6:  //Exit
+   return 0;
+  default:
+   return 0; } }
+
+return 0; }
+
+void MergeSort(int LB, int UB)
+{ int middle;
+  if(LB<UB)
+  { middle=(LB+UB)/2;
+    MergeSort(LB,middle);
+    MergeSort(middle+1,UB);
+    Merge(LB,middle,UB); } }
+
+void Merge(int low, int mid, int high)
+{  struct student temp[10];
+   int L1,L2,i;
+   L1=low;
+   i=low;
+   L2=mid+1;
+   while(L1<=mid&&L2<=high)
+    { if(strcmp(ar[L1].name,ar[L2].name)<0)
+      { temp[i]=ar[L1];
+	L1++;
+	i++; }
+      else
+      { temp[i]=ar[L2];
+	L2++;
+	i++; }}
+    while(L1<=mid)
+    { temp[i]=ar[L1];
+      L1++;
+      i++; }
+    while(L2<=high)
+    { temp[i]=ar[L2];
+      L2++;
+      i++; }
+    for(i=low;i<=high;i++)
+    { ar[i]=temp[i]; }
+}
+
+void BubbleSort(struct student ar[], int s)
+{   int i,j;
+    struct student temp[10];
+    int flag=1;
+    for(i=0;i<(s-1)&&flag;i++)
+    { flag=0;
+      for(j=0;j<(s-1-i);j++)
+      {  if(ar[j].id>ar[j+1].id)
+	 {  temp[j]=ar[j];
+	    ar[j]=ar[j+1];
+	    ar[j+1]=temp[j];
+	    flag=1;   } }}}
+
+int BinarySearch(struct student ar[],int LB,int UB,int data)
+{  int middle;
+   int loc=-1;
+   while(LB<=UB&&loc==-1)
+   { middle=(LB+UB)/2;
+     if(ar[middle].id==data)
+     { loc=middle; }
+     else if (ar[middle].id<data)
+     { LB=middle+1; }
+     else
+     { UB=middle-1; }
+   } return loc; }
+
+
+
+struct student fillSt(void)
+{
+ struct student s;
+ int i;
+
+ printf("\nEnter Id: ");
+ scanf("%d", &s.id);
+
+ printf("\nEnter Name: ");
+ scanf("%s", &s.name);
+
+ for(i=0; i<3;i++)
+ {
+  printf("\nGrade #%d: ",i+1);
+  scanf("%d", &s.grade[i]);
+ }
+ size++;
+
+ return s;
+}
+
+void printSt (struct student s)
+{
+int i;
+ printf("\nID: %d", s.id);
+ printf("\nName: %s", s.name);
+
+ for(i=0; i<3; i++)
+ {
+  printf("\nGrade #%d: %d", i+1, s.grade[i]);
+ }
+}
+
+void printAll(void)
+{ int i;
+  for(i=0;i<size;i++)
+ {
+  printSt(ar[i]);
+ }
+
+}
+
+
+
+
+
+
+
+
+

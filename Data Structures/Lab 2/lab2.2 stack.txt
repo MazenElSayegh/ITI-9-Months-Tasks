@@ -1,0 +1,120 @@
+#include <stdio.h>
+#include<conio.h>
+#include<string.h>
+#include<alloc.h>
+
+struct student
+{ int id;
+  char name[20];
+  int grade[3]; };
+
+struct node
+{ struct student std;
+  struct node* prev; };
+
+struct node* pTail;
+int Push(void);
+struct student Pop(void);
+struct student fillSt(void);
+void printSt(struct student s);
+void printAll(void);
+
+
+int main()
+{ int i=0;
+  struct student s;
+  clrscr();
+
+ while(i!=10) {
+  printf("Enter a number from 1 to 3: ");
+  scanf("%d",&i);
+  switch (i)
+  {
+  case 1:
+   Push();
+   getch();
+   clrscr();
+   break;
+  case 2:
+   Pop();
+   getch();
+   clrscr();
+   break;
+  case 3:
+   printAll();
+   getch();
+   clrscr();
+   break;
+  default:
+   return 0; } }
+
+
+
+
+
+return 0; }
+
+int Push(void)
+{ int retval=0;
+  struct node* ptr;
+  ptr=(struct node*)malloc(sizeof(struct node));
+  if(ptr)
+  { ptr->std=fillSt();
+    ptr->prev=pTail;
+    pTail=ptr; }
+   return retval;  }
+
+struct student Pop(void)
+{ struct node* ptr;
+  struct student s;
+  if(pTail)
+  { ptr=pTail;
+    s=ptr->std;
+    pTail=ptr->prev;
+    free(ptr); }
+  else { s.id=-1; }
+  return s;
+}
+
+struct student fillSt(void)
+{
+ struct student s;
+ int i;
+
+ printf("\nEnter Id: ");
+ scanf("%d", &s.id);
+
+ printf("\nEnter Name: ");
+ scanf("%s", &s.name);
+
+ for(i=0; i<3;i++)
+ {
+  printf("\nGrade #%d: ",i+1);
+  scanf("%d", &s.grade[i]);
+ }
+
+ return s;
+}
+
+void printSt (struct student s)
+{
+int i;
+ printf("\nID: %d", s.id);
+ printf("\nName: %s", s.name);
+
+ for(i=0; i<3; i++)
+ {
+  printf("\nGrade #%d: %d", i+1, s.grade[i]);
+ }
+}
+
+void printAll(void)
+{
+ struct node* pcur = pTail;
+ while(pcur != NULL)
+ {
+  printSt(pcur->std);
+  pcur = pcur->prev;
+ }
+
+}

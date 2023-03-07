@@ -1,0 +1,40 @@
+nav{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+footer{
+    background-color: aliceblue;  
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.lorem, .flex{
+    width: 49%;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+@media (max-width:500px){
+    nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container>article{
+        width: 100%;
+    }
+  }

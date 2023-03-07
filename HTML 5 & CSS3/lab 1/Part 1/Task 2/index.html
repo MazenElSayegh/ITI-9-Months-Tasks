@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br><br>
+    <div id="red">
+        <span>Red&emsp;</span><input type="range" min="0" max="255" value="0" step="1" id="colorRed">
+    </div> 
+    <br><br>
+    <div id="green">
+        <span>Green&emsp;</span><input type="range" min="0" max="255" value="0" step="1" id="colorGreen">
+    </div> 
+    <br><br>
+    <div id="blue">
+        <span>Blue&emsp;</span><input type="range" min="0" max="255" value="0" step="1" id="colorBlue">
+    </div> 
+    <h1 id="txt" style="color: black;">Change the 3 color ranges above and observe my color range.</h1>
+
+    <script>
+        colorRed.addEventListener("change",function(){
+            txt.style.color= `rgb(${colorRed.value},${colorGreen.value},${colorBlue.value})`;
+        });
+        colorGreen.addEventListener("change",function(){
+            txt.style.color= `rgb(${colorRed.value},${colorGreen.value},${colorBlue.value})`;
+        });
+        colorBlue.addEventListener("change",function(){
+            txt.style.color= `rgb(${colorRed.value},${colorGreen.value},${colorBlue.value})`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="can"></canvas><br>
+    <h1>according to pythagoras theorem</h1>
+    <math style="color: red; font-size: 30px;">
+        <mi>c</mi>
+        <mo>=</mo>
+        <msqrt>
+            <msup>
+                <mi>a</mi>
+                <mn>2</mn>
+            </msup>
+            <mo>+</mo>
+            <msup>
+                <mi>b</mi>
+                <mn>2</mn>
+            </msup>
+        </msqrt>
+    </math>
+    <script>
+        var can=document.getElementById("can").getContext("2d");
+        can.canvas.height= 310;
+        can.canvas.width= 310;
+        can.fillStyle="red";
+        can.beginPath();
+        can.moveTo(180,20);
+        can.lineTo(180,280);
+        can.lineTo(60,280);
+        can.closePath();
+        can.fill();
+        can.stroke();
+        can.beginPath();
+        can.font="30px Arial";
+        can.fillText("a",190,150);
+        can.fillText("b",120, 310);
+        can.fillText("c",90,150);
+        can.closePath();
+        can.stroke();
+    </script>
+</body>
+</html>

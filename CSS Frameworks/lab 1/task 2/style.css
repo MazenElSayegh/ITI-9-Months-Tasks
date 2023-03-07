@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    border-width: 2px 4px;
+    border-color: black;
+    border-style: solid;
+    height: 95vh;
+    justify-content: center;
+    align-items: center;
+}
+div{
+    border: 3px solid rgb(255, 217, 0);
+    width: 10%;
+    height: 10%;
+}

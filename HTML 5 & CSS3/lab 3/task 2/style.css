@@ -1,0 +1,17 @@
+input:invalid 
+{
+    border: 2px solid rgb(227, 83, 16); 
+}
+input:valid 
+{
+    border: 2px solid rgb(16, 227, 44);
+}
+input:focus 
+{
+    border: 2px solid rgb(15, 15, 15);
+}
+input:valid+br+span
+{
+    visibility: hidden;
+}
+

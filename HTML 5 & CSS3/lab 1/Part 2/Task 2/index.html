@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="500" height="500" style="border:1px solid green" id="can"></canvas>
+
+    <script>
+
+        var can = document.getElementById("can").getContext("2d");
+        let x = 0, y = 0;
+
+        can.beginPath();
+        can.lineWidth = "5";
+        can.strokeStyle = "red";
+        can.moveTo(0, 0);
+
+        let canvasAnimation = setInterval(() => {
+          can.lineTo(x, y);
+          can.stroke();
+          x += 20;
+          y += 20;
+
+          if (x > 500 && y > 500) {
+            alert("Animation End");
+            clearInterval(canvasAnimation);
+          }
+        }, 100);
+    </script>
+</body>
+</html>

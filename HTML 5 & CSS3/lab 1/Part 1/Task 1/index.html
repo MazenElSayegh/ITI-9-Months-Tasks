@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video width=80% src="/video/frozen.mp4" poster="/video/logo.jpg" id="vid"></video> 
+    <form class="container">
+        <input type="range" min="0" max="100" value="0" id="vidslider">
+        <button type="button" onclick="full()" style="opacity: 0.7; float: right;"><img src="/video/full.png" width=20 alt="full"></button>
+        <span id="currTime">00:00</span> / <span id="totTime">00:00</span>
+        <button type="button" onclick="play()">Play</button>
+        <button type="button" onclick="pause()">Stop</button>
+        <button type="button" onclick="beg()"><<</button>
+        <button type="button" onclick="back()"><</button>
+        <button type="button" onclick="forw()">></button>
+        <button type="button" onclick="end()">>></button>
+        <input type="range" min="0" max="1" value="0.5" step="0.1" id="vol">
+        <button type="button" onclick="mute()">Mute</button> <br>
+        Speed <input type="range" min="0.25" max="2" value="1" step="0.25" id="speed">
+    </form>
+    <script>
+        var vid=document.getElementById("vid");
+        var speed=document.getElementById("speed");
+        function play() { vid.play(); }
+        function pause() { vid.pause(); }
+        function beg() { vid.currentTime=0; }
+        function end() { vid.currentTime=vid.duration; }
+        function back() { vid.currentTime=vid.currentTime-10; }
+        function forw() { vid.currentTime=vid.currentTime+10; }
+        function mute() { vid.volume=0; }
+        vid.addEventListener("timeupdate",function(){
+            var nt = vid.currentTime * (100 / vid.duration);
+            vidslider.value = nt;
+            var curmins = Math.floor(vid.currentTime / 60);
+            var cursecs = Math.floor(vid.currentTime - curmins * 60);
+            var durmins = Math.floor(vid.duration / 60);
+            var dursecs = Math.floor(vid.duration - durmins * 60);
+            if(cursecs < 10){ cursecs = "0"+cursecs; }
+            if(dursecs < 10){ dursecs = "0"+dursecs; }
+            if(curmins < 10){ curmins = "0"+curmins; }
+            if(durmins < 10){ durmins = "0"+durmins; }
+            currTime.innerHTML = curmins+":"+cursecs;
+            totTime.innerHTML = durmins+":"+dursecs;
+        });
+        
+	
+
+        vid.addEventListener("timeupdate",()=>{
+            vidslider.value=vid.currentTime;
+        });
+        speed.addEventListener("change",() => {
+            vid.playbackRate=speed.value;
+        });
+        function full() { vid.requestFullscreen(); }
+        vol.addEventListener("change",()=> {
+            vid.volume= vol.value;
+        });
+        vidslider.addEventListener("change",()=> {
+            vid.currentTime=vidslider.value;
+        });
+    </script>
+    <canvas></canvas>
+</body>
+</html>

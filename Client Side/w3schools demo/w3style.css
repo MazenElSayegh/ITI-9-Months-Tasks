@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: serif, georgia, "times new roman";
+}
+#nav-l {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 2px 5px grey;
+}
+#nav-l a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    display: inline-block;
+    padding: 8px;
+    margin: 13px;
+    letter-spacing: 3px;
+}
+#nav-l a:hover {
+    background-color: darkgrey;
+}
+#nav-r {
+    float: right;
+    margin-right: 10px;
+}
+#home {
+    position: relative;
+    margin-bottom: 50px;
+}
+#home p {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 45px;
+    color: gray; 
+}
+#container {
+    width: 80%;
+    margin: auto;
+}
+#img {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding: 10px 20px;
+    opacity: 0.7;
+}
+#text {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding: 10px 20px;
+}
+#grey {
+    color: gray;
+    margin-bottom: 150px;
+    font-size: 20px;
+}
+#about::after {
+    content: I"";
+    display: table;
+    clear: both;    
+}
+#txt,#since {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+#about {
+    padding-top: 70px;
+}
+h1 {
+    letter-spacing: 3.5px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#menu {
+    width: ;
+    margin-top: 80px;
+    
+}
+#text2 {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding: 10px 20px;
+}
+#img2 {
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding: 10px 20px;
+    opacity: 0.7;
+    margin: 20px 0px 20px 0px;
+}
+h3 {
+    letter-spacing: 3.5px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 60px;
+}
+#space {
+    margin-bottom: 80px;
+}
+#text2 p {
+    color: grey;
+}
+#contact {
+    margin-top: 90px;
+}
+#contact h1 {
+    text-align: left;
+}
+#contact p {
+    margin-bottom: 30px;
+}
+#addr {
+    font-size: 18px;
+    color: #48797b;  
+}
+#contact input[type="text"], #contact input[type="date"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 15px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+button {
+    border: none;
+    background-color: #e4e4e4;
+    font-family: serif;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 80px;
+}
+#footer {
+    padding: 40px;
+    background-color: #e4e4e4;
+    text-align: center;
+}
+#footer a:hover {
+    color: green;
+}
+#container img{
+    border-radius: 5px;
+}

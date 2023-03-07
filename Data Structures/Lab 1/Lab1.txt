@@ -1,0 +1,431 @@
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+#include <alloc.h>
+
+struct student
+{
+ int id;
+ char name[20];
+ int grade[3];
+};
+
+struct node
+{
+ struct student st;
+ struct node* pprev;
+ struct node* pnext;
+};
+
+struct student fillSt(void);
+void printSt (struct student s);
+int add_node(struct student s);
+int insert_node (int loc);
+struct node* create_node(struct student s);
+struct node* search_node_id(int id);
+struct node* search_node_name(char nameIns[]);
+void free_list(void);
+int StCount(void);
+void show_menu(int y);
+int char_clicked(void);
+void apply(int y);
+void printAll(void);
+int delete_node(int loc);
+
+struct node* phead;
+struct node* ptail;
+
+
+
+int main()
+{
+
+char ch;
+int y = 3;
+
+clrscr();
+show_menu(y);
+gotoxy(5,y);
+
+do
+{
+ch = char_clicked();
+
+if(ch == 72)
+{
+ y-=2;
+ if(y < 3) { y = 19;}
+ gotoxy(5,y);
+}
+
+if(ch == 80)
+{
+ y+=2;
+ if(y > 19) {y =3;};
+ gotoxy(5,y);
+}
+
+if(ch == 13)
+{
+ if(y ==17)
+ {
+  return 0;
+ }
+
+ clrscr();
+ apply(y);
+ clrscr();
+ show_menu(y);
+}
+
+if(ch == 27)
+{
+ return 0;
+}
+
+}
+while(ch !=27);
+
+ getche();
+ return 0;
+}
+
+struct student fillSt(void)
+{
+ struct student s;
+ int i;
+
+ printf("\nEnter Id: ");
+ scanf("%d", &s.id);
+
+ printf("\nEnter Name: ");
+ scanf("%s", &s.name);
+
+ for(i=0; i<3;i++)
+ {
+  printf("\nGrade #%d: ",i+1);
+  scanf("%d", &s.grade[i]);
+ }
+
+ return s;
+}
+
+void printSt (struct student s)
+{
+int i;
+ printf("\nID: %d", s.id);
+ printf("\nName: %s", s.name);
+
+ for(i=0; i<3; i++)
+ {
+  printf("\nGrade #%d: %d", i+1, s.grade[i]);
+ }
+}
+
+struct node* create_node(struct student s)
+{
+ struct node* ptr;
+ int i;
+ ptr = (struct node*) malloc(sizeof(struct node));
+ if(ptr)
+ {
+   printf("\nEnter Id: ");
+ scanf("%d", &s.id);
+
+ printf("\nEnter Name: ");
+ scanf("%s", &s.name);
+
+ for(i=0; i<3;i++)
+ {
+  printf("\nGrade #%d: ",i+1);
+  scanf("%d", &s.grade[i]);
+ }
+ i=0;
+  ptr->st=s;
+  ptr->pprev = NULL;
+  ptr->pnext = NULL;
+ }
+ return ptr;
+}
+
+int add_node(struct student s)
+{
+ int retval = 0;
+ struct node* ptr;
+ ptr = create_node(s);
+ if(ptr)
+ {
+  retval = 1;
+  if(phead == NULL) // NoList
+  {
+   phead = ptail = ptr;
+  }
+  else
+  {
+   ptail->pnext = ptr;
+   ptr->pprev = ptail;
+   ptail = ptr;
+  }
+ }
+ return retval;
+}
+
+struct node* search_node_id(int id)
+{
+ struct node* ptr = NULL;
+ if(phead)
+ {
+  ptr = phead;
+  while((ptr->st.id != id && ptr != NULL))
+  {
+   ptr = ptr->pnext;
+  }
+ }
+ return ptr;
+}
+
+
+struct node* search_node_name(char nameIns[])
+{
+ struct node* ptr = NULL;
+ if(phead)
+ {
+  ptr = phead;
+  while((strcmp(ptr->st.name,nameIns) != 0) && ptr != NULL)
+  {
+   ptr = ptr->pnext;
+  }
+ }
+ return ptr;
+}
+
+void free_list(void)
+{
+ struct node * temp;
+ while (phead)
+ {
+  temp = phead;
+  phead = phead->pnext;
+  free(temp);
+ }
+ ptail = NULL;
+}
+
+int StCount(void)
+{
+ struct node* ptr=NULL;
+ int count=0;
+ if(phead)
+ { ptr=phead; }
+ while(ptr)
+ { count++;
+   ptr=ptr->pnext; }
+   return count;
+}
+
+int insert_node(int loc)
+{
+ int i, retval;
+ struct student s;
+ struct node* ptr, *pcur;
+ ptr = create_node(s);
+ if(ptr)
+ {
+  retval = 1;
+  if(phead == NULL) // NoList
+  {
+   phead=ptail=ptr;
+  }
+  else
+  {
+   if(loc ==0) //first_node
+   {
+    ptr->pnext = phead;
+    phead->pprev = ptr;
+    phead = ptr;
+   }
+   else
+   {
+    pcur = phead;
+    for(i = 0; i < loc-1 && pcur; i++)
+    {
+     pcur = pcur->pnext;
+    }
+    if(pcur == ptail || pcur == NULL) // lastNode
+    {
+     ptail->pnext = ptr;
+     ptr->pprev = ptail;
+     ptail = ptr;
+    }
+    else // Middle
+    {
+     pcur->pnext->pprev = ptr;
+     ptr->pnext = pcur->pnext;
+     ptr->pprev = pcur;
+     pcur->pnext = ptr;
+    }
+   }
+  }
+ }
+ return retval;
+}
+
+void show_menu(int y)
+{
+ gotoxy(5,3);
+ printf("Add Node");
+
+ gotoxy(5,5);
+ printf("Insert Node");
+
+ gotoxy(5,7);
+ printf("Search by Id");
+
+ gotoxy(5,9);
+ printf("Search by Name");
+
+ gotoxy(5,11);
+ printf("Delete Node");
+
+ gotoxy(5,13);
+ printf("Print All");
+
+ gotoxy(5,15);
+ printf("Free List");
+
+ gotoxy(5,17);
+ printf("Exit");
+
+ gotoxy(5,19);
+ printf("Count");
+
+ gotoxy(5,y);
+}
+
+int char_clicked()
+{
+ char ch;
+ int x;
+ ch = getch();
+ if(ch ==0)
+ {
+  ch = getch();
+ }
+ return ch;
+
+}
+
+void apply(int y)
+{
+ int loc, id, result,count;
+ struct node* ptr;
+ struct student s;
+ char nameIns[30];
+ switch(y)
+ {
+  case 3:
+  add_node(s);
+  break;
+
+  case 5:
+  printf("Location: ");
+  scanf("%d", &loc);
+  insert_node(loc);
+  break;
+
+  case 7:
+  printf("ID: ");
+  scanf("%d",&id);
+  if(search_node_id(id) != NULL)
+  {
+   ptr = search_node_id(id);
+   printSt(ptr -> st);
+  }
+  else { printf("NOT FOUND"); }
+  getche();
+  break;
+
+  case 9:
+   printf("NAME: ");
+  scanf("%s",&nameIns);
+  if(search_node_name(nameIns) != NULL)
+  {
+   ptr = search_node_name(nameIns);
+   printSt(ptr -> st);
+  }
+  else { printf("NOT FOUND"); }
+  getche();
+  break;
+
+  case 11:
+  printf("Location: ");
+  scanf("%d", &loc);
+  delete_node(loc);
+  break;
+
+  case 13:
+  printAll();
+  getche();
+  break;
+
+  case 15:
+  free_list();
+  printf("all List is freed");
+  getche();
+  break;
+
+  case 19:
+  count=StCount();
+  printf("There are %d nodes",count);
+  printAll();
+  getche();
+  break;
+ }
+}
+
+void printAll(void)
+{
+ struct node* pcur = phead;
+ while(pcur != NULL)
+ {
+  printSt(pcur->st);
+  pcur = pcur->pnext;
+ }
+
+}
+
+int delete_node(int loc)
+{
+  int retval = 0;
+  struct node* pcur;
+  int i;
+  if(phead)
+  { pcur=phead;
+
+  if(loc ==0)
+  { if(phead==ptail)
+    { phead=ptail=NULL; }
+    else {
+   phead= phead->pnext;
+   phead->pprev=NULL; }
+   free(pcur);
+   retval=1;
+  }
+  else
+  {
+   for(i=0; i < loc && pcur; i++)
+   {pcur = pcur->pnext; }
+   if(pcur)
+   { if(pcur==ptail)
+      { ptail=ptail->pnext;
+	ptail->pnext=NULL; }
+     else
+     { pcur->pprev->pnext=pcur->pnext;
+       pcur->pnext->pprev=pcur->pprev; }
+    free(pcur);
+    retval=1;
+    }
+    }
+   }
+   return retval;
+  }
