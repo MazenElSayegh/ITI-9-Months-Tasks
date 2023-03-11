@@ -1,0 +1,17 @@
+MVC
+Models[connect to DB] -- Views [Front] -- Controllers[Between models and front]
+Validation of [ajv -(Another Jason Validator)] [npm i ajv]
+JWT [Jason web token] ==> Pass data from server to client as [header or cookie]
+    a- [ID, name]
+    b- rolde [admin] ==> permissions
+    c- npm i jasonwebtoken
+Authentication[Login Reg if exit in DB]
+ vs Authorization [Permissions]
+
+ Students - Courses
+ [
+    1- create Students - students/create
+    2- update  /students/:id Put
+    3- delete  /students/:id delete
+    4- get all or by ID
+ ]
