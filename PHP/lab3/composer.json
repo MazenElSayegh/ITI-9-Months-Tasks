@@ -1,0 +1,16 @@
+{
+  "name": "iti/lab2",
+  "description": "Task 2",
+  "license": "MIT",
+  "require": {
+    "endroid/qr-code": "*"
+  },
+  "autoload": {
+    "classmap": [
+      "classes"
+    ],
+    "files": [
+      "config.php"
+    ]
+  }
+}
