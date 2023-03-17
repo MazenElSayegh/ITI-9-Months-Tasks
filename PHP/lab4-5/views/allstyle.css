@@ -1,0 +1,69 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+button {
+    height: 35px;
+    width: 140px;
+    box-sizing: border-box;
+    border: rgb(110, 179, 110);
+    border-radius: 60px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: white;
+    background-color: lightgreen;
+    margin-top: 30px;
+    margin: 10px;
+  }
+  input {
+    height: 40px;
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+    color: rgb(98, 160, 98);
+    border: 2px solid lightgreen;
+    padding: 10px;
+  }
+  button a {
+    color: white;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  button:hover a {
+    color: lightgreen;
+  }
+  button:hover {
+    background-color: white;
+    border: 4px solid lightgreen;
+    color: lightgreen;
+  }
+  #btns button {
+    margin: 30px;
+  }
+td {
+  color: black;
+  font-weight: 600;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+}
+table {
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+th {
+  background-color: lightgreen;
+  color: white;
+}
+
