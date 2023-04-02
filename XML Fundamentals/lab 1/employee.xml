@@ -1,0 +1,154 @@
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<employees>
+	<employee>
+		<name>Mazen</name>
+        <email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+        <phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+    <employee>
+		<name>Mazen</name>
+        <email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+        <phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+	<employee>
+		<name>Mazen</name>
+        <email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+        <phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+    <employee>
+		<name>Mazen</name>
+        <email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+        <phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+   <employee>
+		<name>Mazen</name>
+        <email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+        <phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+   <employee>
+		<name>Mazen</name>
+        <email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+			<address>
+				<street>93</street> 
+				<buildingNumber>3,</buildingNumber> 
+				<Region>Smouha,</Region> 
+				<city>Alexandria,</city> 
+				<country>Egypt.</country>
+			</address> 
+		</addresses>
+        <phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+</employees>
