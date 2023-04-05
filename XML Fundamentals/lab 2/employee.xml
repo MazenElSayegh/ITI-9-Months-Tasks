@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<employees>
+    <employee> 
+        <name>Mazen</name>
+        <phone>0101234567</phone>
+        <address>Smouha</address>
+        <email>mazen@gmail.com</email>
+    </employee>
+    <employee> 
+        <name>Mazen</name>
+        <phone>0101234567</phone>
+        <address>Smouha</address>
+        <email>mazen@gmail.com</email>
+    </employee>
+    <employee> 
+        <name>Mazen</name>
+        <phone>0101234567</phone>
+        <address>Smouha</address>
+        <email>mazen@gmail.com</email>
+    </employee>
+</employees>
