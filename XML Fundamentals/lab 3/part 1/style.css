@@ -1,0 +1,47 @@
+employees {
+    background-color: lightgreen;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+employee {
+    margin-bottom: 30pt;
+    margin-left: 0pt;
+    border: 4px solid rgb(83, 83, 83);
+    width: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+
+employee:hover {
+    background-color: aquamarine;
+    border: 4px dashed black;
+}
+
+name {
+    font-size: 30px;
+    color: #474744;
+    display: block;
+}
+
+phone {
+    font-size: 15px;
+}
+
+address {
+    font-size: 25px;
+    color: #474744;
+    display: block;
+}
+
+email {
+    font-size: 25px;
+    color: #474744;
+}

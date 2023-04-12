@@ -1,0 +1,78 @@
+<?xml-stylesheet type="text/css" href="style.css"?>
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///G:/ITI-9Months/XML%20Fundamentals/lab%203/part%201/employee.xsd">
+	<employee>
+		<name>Mazen</name>
+		<email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street>
+				<buildingNumber>3</buildingNumber>
+				<Region>Smouha</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>34</street>
+				<buildingNumber>5</buildingNumber>
+				<Region>Sidigaber</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		</addresses>
+		<phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+	<employee>
+		<name>Ziad</name>
+		<email>ziad@gmail.com</email>
+		<addresses>
+			<address>
+				<street>25</street>
+				<buildingNumber>3</buildingNumber>
+				<Region>Smouha</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>13</street>
+				<buildingNumber>8</buildingNumber>
+				<Region>Kafr abdo</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		</addresses>
+		<phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+	<employee>
+		<name>Ahamed</name>
+		<email>ahmed@gmail.com</email>
+		<addresses>
+			<address>
+				<street>46</street>
+				<buildingNumber>6</buildingNumber>
+				<Region>Smouha</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+			<address>
+				<street>98</street>
+				<buildingNumber>7</buildingNumber>
+				<Region>Gleem</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		</addresses>
+		<phones>
+			<phone type="home">1234567</phone>
+			<phone type="work">1234567</phone>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+</employees>

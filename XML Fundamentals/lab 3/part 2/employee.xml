@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="employee.xsl"?>
+<employees>
+	<employee>
+		<name>Mazen</name>
+		<email>mazen@gmail.com</email>
+		<addresses>
+			<address>
+				<street>93</street>
+				<buildingNumber>3</buildingNumber>
+				<Region>Smouha</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		</addresses>
+		<phones>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+	<employee>
+		<name>Ziad</name>
+		<email>ziad@gmail.com</email>
+		<addresses>
+			<address>
+				<street>13</street>
+				<buildingNumber>8</buildingNumber>
+				<Region>Kafr abdo</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		</addresses>
+		<phones>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+	<employee>
+		<name>Ahamed</name>
+		<email>ahmed@gmail.com</email>
+		<addresses>
+			<address>
+				<street>98</street>
+				<buildingNumber>7</buildingNumber>
+				<Region>Gleem</Region>
+				<city>Alexandria</city>
+				<country>Egypt</country>
+			</address>
+		</addresses>
+		<phones>
+			<phone type="mobile">1234567</phone>
+		</phones>
+	</employee>
+</employees>
