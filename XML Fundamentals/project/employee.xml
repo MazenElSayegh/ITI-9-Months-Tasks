@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<employees>
+<employee> <name>Ahmed</name><phone>123445</phone><address>sidigabr</address><email>ah@gmail.com</email></employee>
+<employee> <name>Mazen mohamed</name><phone>01012386667</phone><address>smouha 2</address><email>maz2@gmail.com</email></employee>
+</employees>
