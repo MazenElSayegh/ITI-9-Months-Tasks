@@ -1,0 +1,29 @@
+{% extends 'main/base_layout.html' %}
+
+
+{% block main-content %}
+ <h1> Book Details </h1>
+ <table class="table">
+    <thead>
+        <tr>
+            <td> ID </td>
+            <td> Title </td>
+            <td> Quantity </td>
+            <td> Description </td>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>{{ book_id }} </td>
+            <td>{{ book_title }} </td>
+            <td> {{ book_quantity }}</td>
+            <td> {{ book_description }} </td>
+        </tr>
+    </tbody>
+
+ </table>
+
+
+{% endblock %}
+

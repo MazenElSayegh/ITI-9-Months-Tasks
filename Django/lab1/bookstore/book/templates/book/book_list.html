@@ -1,0 +1,42 @@
+{% extends 'main/base_layout.html' %}
+
+{# override block title #}
+
+{% block title %}
+    TODO task list
+{% endblock %}
+
+{# override body #}
+{% block main-content %}
+<table class="table table-condensed">
+    <thead>
+       <tr>
+           <td> ID </td>
+           <td> Title </td>
+           <td> Description </td>
+           <td> Quantity </td>
+       </tr>
+    </thead>
+    
+    <tbody>
+       {% for book in books_list%}
+      <tr>
+       <td> {{book.id}} </td>
+       <td> {{book.title}} </td>
+       <td> {{book.description}} </td>
+       <td>  {{book.quantity}} </td>
+       <td> 
+           <a class="btn btn-primary" href="{% url 'book:book-detail' book.id %}"> View</a>
+           <a class="btn btn-info" href="{% url 'book:book-update' book.id %}"> Update</a>
+           <a class="btn btn-danger" href="{% url 'book:book-delete' book.id %}"> Delete</a> 
+       </td>
+      </tr>
+      {% empty %}
+      <tr>
+       <td colspan="3" class="text-center">There are no books</td>
+      </tr>
+   {% endfor %}
+    </tbody>
+   </table>
+   <a class="btn btn-success" href="{% url 'book:book-create'%}">Add book</a>
+   {% endblock %}

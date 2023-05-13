@@ -1,0 +1,34 @@
+{% extends 'main/base_layout.html' %}
+
+{# override block title #}
+
+{% block title %}
+    NEW BOOK
+{% endblock %}
+
+{# override body #}
+{% block main-content %}
+<h1> New Book </h1>
+ 
+<form method="post" class="container" action="{% url 'book:book-add'%}">
+{% csrf_token %}
+    <div class="mb-3">
+      <label for="exampleInputID1" class="form-label">ID</label>
+      <input type="text" class="form-control" id="exampleInputID1" name="id" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputTitle" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleInputTitle" name="title" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputDesc" class="form-label">Description</label>
+        <input type="text" class="form-control" id="exampleInputDesc" name="description" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputQuantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="exampleInputQuantity" name="quantity" >
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+
+{% endblock %}
