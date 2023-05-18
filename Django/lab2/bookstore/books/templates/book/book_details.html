@@ -1,0 +1,38 @@
+{% extends 'main/base_layout.html' %}
+
+
+{% block main-content %}
+ <h1> Book Details </h1>
+ <table class="table">
+    <thead>
+        <tr>
+            <td> ID </td>
+            <td> Title </td>
+            <td> Description </td>
+            <td> Views </td>
+            <td> Rating </td>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>{{ book.id }} </td>
+            <td>{{ book.title }} </td>
+            <td> {{ book.description }} </td>
+            <td> {{ book.views }}</td>
+            <td> {{ book.rate }}</td>
+        </tr>
+    </tbody>
+
+ </table>
+ <div class="text-center mt-5" style="display:inline">
+    <a href="{% url 'book:book-index'  %}">
+        <button type="button" class="btn btn-info">
+            Back to list
+        </button>
+    </a>
+</div>
+
+
+{% endblock %}
+

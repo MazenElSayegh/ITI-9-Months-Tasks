@@ -1,0 +1,35 @@
+{% extends 'main/base_layout.html' %}
+
+{# override block title #}
+
+{% block title %}
+    EDIT BOOK
+{% endblock %}
+
+{# override body #}
+{% block main-content %}
+<div class="container">
+    <div class="row">
+        <div class="text-center col-12">
+
+            <form method="POST" action="{% url 'book:book-update' book.id %}">
+                {% csrf_token %}
+                {{form.as_p}}
+
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="text-center mt-5" style="display:inline">
+                    <a href="{% url 'book:book-index'  %}">
+                        <button type="button" class="btn btn-info">
+                            Back to list
+                        </button>
+                    </a>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+{% endblock %}

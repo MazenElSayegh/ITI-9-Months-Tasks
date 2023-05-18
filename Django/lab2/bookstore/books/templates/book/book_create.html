@@ -1,0 +1,46 @@
+{% extends 'main/base_layout.html' %}
+
+{# override block title #}
+
+{% block title %}
+    NEW BOOK
+{% endblock %}
+
+{# override body #}
+{% block main-content %}
+<h1> New Book </h1>
+ 
+<form method="post" class="container" action="{% url 'book:book-add'%}">
+{% csrf_token %}
+    {% comment %} <div class="mb-3">
+      <label for="exampleInputID1" class="form-label">ID</label>
+      <input type="text" class="form-control" id="exampleInputID1" name="id" >
+    </div> {% endcomment %}
+    <div class="mb-3">
+        <label for="exampleInputTitle" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleInputTitle" name="title" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputDesc" class="form-label">Description</label>
+        <input type="text" class="form-control" id="exampleInputDesc" name="description" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputQuantity" class="form-label">Rating</label>
+        <input type="number" class="form-control" id="exampleInputQuantity" name="rate" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputQuantity" class="form-label">Views</label>
+        <input type="number" class="form-control" id="exampleInputQuantity" name="views" >
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+
+  <div class="text-center mt-5" style="display:inline">
+    <a href="{% url 'book:book-index'  %}">
+        <button type="button" class="btn btn-info">
+            Back to list
+        </button>
+    </a>
+</div>
+
+{% endblock %}
